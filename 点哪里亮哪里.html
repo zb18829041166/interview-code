@@ -1,0 +1,49 @@
+<!--
+    实现思路 就是ul>li
+    li flex 布局
+    然后hover伪类 来改变background-color
+    需要注意的只有currentColor以及direction:rtl改变li方向
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid currentColor;
+            color: black;
+        }
+        li:hover,li:hover~li{
+            background: red;
+        }
+        ul{
+            display: flex;
+         /*   direction: rtl; 反向*/
+            flex-direction:row-reverse; /*二选一即可*/
+            width: fit-content;/*适应内容宽度*/
+        }
+    </style>
+
+</body>
+</html>

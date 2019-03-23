@@ -1,0 +1,30 @@
+<!--
+    关键就是insertBefore的用法
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        const li=document.createElement("li");
+        li.innerHTML="123";
+        const ul=document.getElementById("list");
+        ul.insertBefore(li,ul.childNodes[0]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- 
+    核心思路就是首先创造canvas
+    然后画出矩形,先设置样式，然后开始画画，无论图还是字都是这个套路，先赋值样式，然后画画
+    然后写字
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="startGame" width="200" height="100">
+
+    </canvas>
+    <script>
+        let startGame=document.getElementById("startGame"),
+            ctx=startGame.getContext("2d");
+        ctx.fillStyle="gray";
+        ctx.fillRect(0,0,startGame.width,startGame.height);
+        ctx.fillStyle="blue";
+        ctx.font="40px serif";
+        ctx.fillText("游戏开始",20,60);
+    </script>
+</body>
+
+</html>

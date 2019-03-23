@@ -1,0 +1,44 @@
+<!--1基本思路是点击label标签，label标签触发checked属性，checked属性触发display：flex
+    同理另外一个label 也触发cheecked属性，然后display：none
+    过程中input一直是none
+    2看代码就要删除多余的地方
+    3四个方向都是0，可以把div拉扯到最大，如果子元素marign：auto 子元素可以居中
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="checkbox">打开</label>
+    <input type="checkbox" id="checkbox">
+    <div class="model"> 
+        <label for="checkbox" class="close">关闭</label>
+    </div>
+    <style>
+        input[type="checkbox"]{
+            display: none;
+        }
+        .model{
+            display: none;
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(0,0,0,0.3);
+        }
+        #checkbox:checked~.model{
+            display: flex;
+        }
+        .close{
+            margin:auto;
+        }
+
+    </style>
+</body>
+</html>

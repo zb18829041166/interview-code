@@ -1,0 +1,29 @@
+<!--
+    适用于移动端和webkit内核浏览器
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        这是一个伸缩容器，而且他很长，真的很长很长很长
+    </div>
+    <style>
+        div{
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp:2;
+        }
+    
+    </style>
+</body>
+</html>

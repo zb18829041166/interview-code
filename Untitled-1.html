@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="
+        width: 0;                  
+        border:50px solid transparent;
+        border-top-color: gray;
+    "></div>
+
+    <form action=""
+        id="register"
+    >
+       <input id="txt" value="1" type="text"/>
+    </form>
+
+    
+
+    <div style="border:10px solid red;
+                width:50px;
+                height:50px;
+    
+    ">
+    1111
+    </div>
+    
+    <div style="
+    width:50px;
+    height:50px;
+    box-shadow: 0 0 0 5px red,
+                0 0 0 10px green,
+                0 0 0 20px pink inset;
+    ">
+    </div>
+
+    <p style="width:100px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden">
+        这句话很长长长长长长长长长长长长长长长长长长长长长长长长chang       
+    </p>
+
+    <div id="container">
+        <a href="#" data-digit="1">按钮</a>
+    </div>
+
+    <div style="width:50px;height:50px;background-color: red;position: relative" class="moveDiv">
+
+    </div>
+
+    <div class="mediaSearch">
+            1
+    </div>
+
+
+
+
+
+
+
+    <style>
+        /*我认为使用transform:translateX(30px)要比position定位好*/
+        .moveDiv{
+            animation: move 2s infinite linear alternate;
+        }
+        
+        @keyframes move{
+            from{
+              left: 0px;
+            }
+            50%{
+              left:30px;
+            }
+            to{
+              left:60px;
+            }
+        }
+
+        @media only screen and (min-width:360px) and (max-width:640px) {
+            .mediaSearch{
+                background-color:red;
+                width: 30%;
+            }
+        }
+
+    
+    
+    
+    </style>
+
+
+
+
+    <script>
+        console.log(document.getElementById("txt").value);
+        console.log(document.forms[0].txt.value);
+        console.log(document.forms.register.txt.value);
+        console.log(document.forms[0].elements[0].value);
+        var container=document.getElementById("container");
+        container.addEventListener("click",(e)=>{
+            let target=e.target;
+            if(target.tagName.toLowerCase()!="a"){ 
+                return
+            }
+            alert(`${target.dataset.digit}${target.innerText}`)
+        },false)
+        
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

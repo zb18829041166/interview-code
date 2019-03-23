@@ -1,0 +1,88 @@
+<!--
+    基本思路就是和圣杯布局一样
+    只是padding可以换成marigin（加一层main-inner）,
+    这样的话可以把内容缩小，虽然main依旧被挡住一部分
+    记住要清除浮动
+-->
+
+<!--
+    真的很神奇，main宽度是100%所以把left right挤了下去，而如果left marin-left：-100%又会浮起来，遮挡main
+-->
+
+<!--
+    宽度会填满，但是高度应该不会
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" class="clearfix">
+        <div id="main">
+            <div id="main-inner">
+                中间
+            </div>
+        </div>
+        <div id="left">
+            左边
+        </div>
+        <div id="right">
+            右边
+        </div>
+    </div>
+
+    <style>
+         .clearfix::after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-width: 700px;
+        }
+
+        #container{
+            height: 400px;
+        }
+        #main{
+            width: 100%;
+            
+            float: left;
+            
+        }
+        #main-inner{
+           margin-left:200px;
+           margin-right:300px;
+           height: 400px;
+           background-color:red;    
+        }
+        #left{
+            float: left;
+            width: 200px;
+            height: 400px;
+            margin-left:-100%;
+            background-color:yellow;
+        }
+        #right{
+            float: left;
+            width: 300px;
+            height: 400px;
+            margin-left: -300px;
+            background-color: pink;
+        }
+
+    </style>
+
+
+</body>
+</html>
